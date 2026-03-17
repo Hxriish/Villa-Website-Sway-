@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BigJ Villas</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .destinations-grid .card {
+  padding: 15px; /* smaller than default */
+}
+
+.destinations-grid .card img {
+  height: 400px; /* smaller image */
+  object-fit: cover;
+}
+
+.destinations-grid .card h3 {
+  font-size: 16px;
+}
+
+.destinations-grid .card p {
+  font-size: 13px;
+  line-height: 1.4;
+}
+    .contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+  text-align: left;
+}
+
+.contact-info {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.contact-info h3 {
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.contact-form {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form button {
+  margin-top: 10px;
+}
+
+/* MOBILE */
+@media(max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+    .card h3 {
+  margin-bottom: 12px;
+}
+
+.card p {
+  margin-bottom: 15px;
+}
+.packages-grid .card {
+  padding: 35px;
+}
+
+.packages-grid .card img {
+  height: 240px;
+  object-fit: cover;
+}
+
+.packages-grid .card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.packages-grid .card p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+html {
+  scroll-behavior: smooth;
+}   
+    body {
+      background: #0f172a;
+      color: white;
+    }
+
+    /* NAVBAR */
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 50px;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 22px;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* HERO */
+.hero {
+  height: 100vh;
+  background: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1526779259212-939e64788e3c") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+    .hero h2 {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      background: #38bdf8;
+      border: none;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 30px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 100px 50px;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+.destinations-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: black;
+      padding: 40px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+    @media(max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 40px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header>
+    <h1>BigJ Villas</h1>
+    <nav>
+      <a href="#">Book Now</a>
+      <a href="#services">Popular Destinations</a>
+      <a href="#rooms">Packages</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+<section class="hero" id="top">
+    <div>
+      <h2>Enjoy Your Vacation</h2>
+      <p>Luxury villas near the beach with unforgettable experiences</p>
+      <button class="btn">Book Now (This Does Nothing For Now Lol)</button>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+<section id="services">
+  <h2>Popular Nearby Destinations</h2>
+
+  <div class="grid destinations-grid">
+    <div class="card">
+      <img src="images/pigeon_island.webp">
+      <h3>Pigeon Island</h3>
+      <p>Famous for snorkeling, coral reefs, and crystal-clear waters.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/kanniya-hot-springs.jpg">
+      <h3>Kanniya Hot Springs</h3>
+      <p>Experience natural geothermal hot wells with healing properties.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/marble-beach.jpg">
+      <h3>Marble Beach</h3>
+      <p>A hidden gem with calm waters and soft white sand.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/Koneswaram-Hindu-Temple.jpg">
+      <h3>Koneshwar Temple</h3>
+      <p>A historic Hindu temple with stunning ocean cliff views.</p>
+    </div>
+  </div>
+</section>
+
+<section id="rooms">
+  <h2>Packages We Offer</h2>
+
+  <div class="grid packages-grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+      <h3>Whale Watching + Boat Tour in Trincomalee</h3>
+      <p>Experience majestic whales up close with an unforgettable boat tour across the ocean.</p>
+      <a href="#top" class="btn">Book Now</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5">
+      <h3>Dolphin Watching Experience in Trincomalee</h3>
+      <p>Watch playful dolphins in their natural habitat on a guided ocean adventure.</p>
+      <a href="#top" class="btn">Book Now</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+      <h3>Pigeon Island Snorkeling Packages</h3>
+      <p>Explore vibrant coral reefs and marine life in crystal-clear waters.</p>
+      <a href="#top" class="btn">Book Now</a>
+    </div>
+  </div>
+</section>
+
+  <!-- CONTACT -->
+<section id="contact">
+  <h2>Get In Touch</h2>
+
+  <div class="contact-container">
+
+    <!-- LEFT SIDE -->
+    <div class="contact-info">
+      <h3>Contact Details</h3>
+      <p><strong>Email:</strong> info@bigjvillas.com</p>
+      <p><strong>Phone:</strong> +94 26 222 6677</p>
+      <p><strong>Location:</strong> Trincomalee, Sri Lanka</p>
+
+      <a href="#top" class="btn">Book Now</a>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 BigJ Villas. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
