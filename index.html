@@ -3,11 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BigJ Villas</title>
+  <title>Sea Breeze Nilaveli</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 
   <style>
+
+    .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-container img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.logo-container h1 {
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+    /* GALLERY */
+
+#gallery {
+  background: #0f172a;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.gallery-subtitle {
+  margin-top: 15px;
+  margin-bottom: 35px;
+  color: #cbd5e1;
+}
+
+.gallery-container {
+  width: 90%;
+  max-width: 1200px;
+  height: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 25px;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.gallery-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* MOBILE */
+@media(max-width: 900px) {
+  .gallery-container {
+    height: 400px;
+    width: 95%;
+  }
+}
     * {
       margin: 0;
       padding: 0;
@@ -240,12 +297,17 @@ html {
 <body>
 
   <!-- NAV -->
-  <header>
-    <h1>BigJ Villas</h1>
-    <nav>
+<header>
+  <div class="logo-container">
+    <img src="images/SeaBreeze_Blue_Logo.png" alt="Sea Breeze Nilaveli Logo">
+    <h1>Sea Breeze Nilaveli</h1>
+  </div>
+
+  <nav>
       <a href="#">Book Now</a>
       <a href="#services">Popular Destinations</a>
       <a href="#rooms">Packages</a>
+      <a href="#gallery">Our Property</a>
       <a href="#contact">Contact Us</a>
     </nav>
   </header>
@@ -255,7 +317,9 @@ html {
     <div>
       <h2>Enjoy Your Vacation</h2>
       <p>Luxury villas near the beach with unforgettable experiences</p>
-      <button class="btn">Book Now (This Does Nothing For Now Lol)</button>
+      <a href="https://www.airbnb.ca/rooms/1220836773134432708?viralityEntryPoint=1&s=76&source_impression_id=p3_1724713475_P34Le8igMrM_Bw55" target="_blank" class="btn">
+  Book Now
+</a>
     </div>
   </section>
 
@@ -295,25 +359,37 @@ html {
 
   <div class="grid packages-grid">
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+      <img src="images/BoatTour.jpg">
       <h3>Whale Watching + Boat Tour in Trincomalee</h3>
       <p>Experience majestic whales up close with an unforgettable boat tour across the ocean.</p>
       <a href="#top" class="btn">Book Now</a>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5">
+      <img src="images/Dolphin watching .webp">
       <h3>Dolphin Watching Experience in Trincomalee</h3>
       <p>Watch playful dolphins in their natural habitat on a guided ocean adventure.</p>
       <a href="#top" class="btn">Book Now</a>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+      <img src="images/MainPic.jpg">
       <h3>Pigeon Island Snorkeling Packages</h3>
       <p>Explore vibrant coral reefs and marine life in crystal-clear waters.</p>
       <a href="#top" class="btn">Book Now</a>
     </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <h2>Explore Sea Breeze Nilaveli</h2>
+  <p class="gallery-subtitle">
+    Take a look at our villa, beaches, experiences, and beautiful surroundings.
+  </p>
+
+  <div class="gallery-container">
+    <img id="gallery-image" src="images/gallery1.jpg" alt="Sea Breeze Nilaveli">
   </div>
 </section>
 
@@ -334,20 +410,86 @@ html {
     </div>
 
     <!-- RIGHT SIDE -->
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
+<form 
+  class="contact-form"
+  action="https://formspree.io/f/moeqqzrq"
+  method="POST"
+>
+
+  <input 
+    type="text" 
+    name="name"
+    placeholder="Your Name" 
+    required
+  >
+
+  <input 
+    type="email" 
+    name="email"
+    placeholder="Your Email" 
+    required
+  >
+
+  <textarea 
+    name="message"
+    placeholder="Your Message" 
+    rows="5" 
+    required
+  ></textarea>
+
+  <button type="submit" class="btn">
+    Send Message
+  </button>
+
+</form>
 
   </div>
 </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 BigJ Villas. All rights reserved.</p>
+    <p>© 2026 Sea Breeze Nilaveli. All rights reserved.</p>
   </footer>
+  <script>
+
+  const galleryImages = [
+    "images/gallery1.jpg",
+    "images/gallery2.jpg",
+    "images/gallery3.jpg",
+    "images/gallery4.jpg",
+    "images/gallery5.jpg"
+  ];
+
+  let currentImage = 0;
+
+  const galleryImage = document.getElementById("gallery-image");
+
+  setInterval(() => {
+
+    // Fade out
+    galleryImage.style.opacity = 0;
+
+    setTimeout(() => {
+
+      // Move to next image
+      currentImage++;
+
+      // Go back to first image
+      if (currentImage >= galleryImages.length) {
+        currentImage = 0;
+      }
+
+      // Change image
+      galleryImage.src = galleryImages[currentImage];
+
+      // Fade back in
+      galleryImage.style.opacity = 1;
+
+    }, 800);
+
+  }, 4000);
+
+</script>
 
 </body>
 </html>
